@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Calculator</title>
+    <style>
+        body {
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            background-color: lightblue;
+        }
+        .container {
+          width: 400px;
+          height: 400px;
+          padding: 30px;
+          background: #1737ef;
+          border-radius: 10px;
+        }
+        #display {
+          width: 98%;
+          height: 8vh;
+          margin-bottom: 20px;
+          text-align: right;
+          font-size: 20px;
+        }
+        button {
+          width: 24%;
+          height: 7vh;
+          margin-bottom: 10px;
+        }
+        .equal {
+          width: 98.6%;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <input type="text" name="" id="display">
+    <br>
+    <button onclick="append('1')">1</button>
+    <button onclick="append('2')">2</button>
+    <button onclick="append('3')">3</button>
+    <button onclick="append('4')">4</button>  
+    <br>
+    <button onclick="append('5')">5</button>
+    <button onclick="append('6')">6</button>
+
+    <button onclick="append('7')">7</button>
+    <button onclick="append('8')">8</button>
+    <br>
+    <button onclick="append('9')">9</button>
+    <button onclick="append('0')">0</button>
+    <button onclick="append('+')">+</button>
+    <button onclick="append('-')">-</button>
+    <br>
+    <button onclick="append('/')">/</button>
+    <button onclick="append('*')">*</button>
+    <button onclick="Clears()">C</button>
+    <button onclick="del()">D</button>
+    <br>
+    <button onclick="compute()" class="equal">=</button>
+  </div>
+  
+</body>
+</html>
+<script>
+    const display = document.getElementById("display")
+    function append (value){
+        display.value+=value 
+    }
+    function compute() {
+        display.value = eval(display.value);
+    }
+    function Clears() {
+        display.value='';
+    }
+    function del() {
+       display.value = display.value.slice(0,-1);
+    }
+</script>
